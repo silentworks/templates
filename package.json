@@ -1,0 +1,23 @@
+{
+	"name": "silentworks-templates",
+	"version": "1.0.0",
+	"description": "These are started templates for creating your web app with various sane defaults.",
+	"scripts": {
+		"format": "prettier --write \"**/*.{js,json,md,svelte,ts,tsx,jsx,css}\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/silentworks/templates.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/silentworks/templates/issues"
+	},
+	"homepage": "https://github.com/silentworks/templates#readme",
+	"devDependencies": {
+		"husky": "^8.0.1",
+		"prettier": "^2.7.1",
+		"prettier-plugin-svelte": "^2.7.0"
+	}
+}
