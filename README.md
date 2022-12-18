@@ -11,3 +11,11 @@ npx degit silentworks/templates/svsd project-name
 cd project-name
 npm install # or pnpm install or yarn install
 ```
+
+### SvelteKit + Supabase + DaisyUI + Typescript + Zod
+
+```bash
+npx degit silentworks/templates/sksdz project-name
+cd project-name
+npm install # or pnpm install or yarn install
+```
