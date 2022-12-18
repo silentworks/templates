@@ -10,8 +10,17 @@
 	let password: string;
 
 	const login = async () => {
-		const userCreds = passwordLess ? { email } : { email, password };
-		const { session, error } = await supabase.auth.signIn(userCreds);
+		if (passwordLess) {
+			const { error } = await supabase.auth.signInWithOtp({ email });
+		} else {
+			const {
+				data: { session },
+				error,
+			} = await supabase.auth.signInWithPassword({
+				email,
+				password,
+			});
+		}
 	};
 </script>
 

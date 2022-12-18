@@ -8,7 +8,7 @@
 	let password: string;
 
 	const signUp = async () => {
-		const { session, error } = await supabase.auth.signUp({
+		const { data: { session }, error } = await supabase.auth.signUp({
 			email,
 			password,
 		});

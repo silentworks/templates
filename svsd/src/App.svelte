@@ -9,16 +9,17 @@
 	let user: User;
 
 	onMount(() => {
-		const currentSession = supabase.auth.session();
-		user = currentSession?.user;
+		supabase.auth.getSession().then(({ data: { session } }) => {
+			user = session?.user;
+		});
 
-		const { data: authListener } = supabase.auth.onAuthStateChange(
-			(event, session) => {
-				user = session?.user;
-			},
-		);
+		const {
+			data: { subscription },
+		} = supabase.auth.onAuthStateChange((_, session) => {
+			user = session?.user;
+		});
 
-		return () => authListener?.unsubscribe();
+		return () => subscription?.unsubscribe();
 	});
 </script>
 
